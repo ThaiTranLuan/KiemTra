@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript" language="javascript"></script>
+<script language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js" type="text/javascript"></script>
+
+
+<script>
+$(document).ready(function(){
+    var validator = $("#input_form").validate({ 
+        rules: { 
+            username: "required", 
+            password: { 
+                required: true, 
+                minlength: 7, 
+            }, 
+            
+            email: { 
+                required: true, 
+                email: true
+            }
+        }, 
+        messages: { 
+            username: "A number is required", 
+            password: { 
+                required: "A number is required", 
+                minlength: "The number should be at least 7 digits",
+            }, 
+            
+            email: { 
+                required: "A number is required", 
+                email:"The number should be at divisible by 10",
+            },
+        },
+    }); 
+})
+</script>
+<style>
+	label.error{
+		color:red;
+	}
+</style>
+
+</head>
+<body>
+	<form style='width:450px' id='input_form' method='post'>
+    <fieldset>
+        
+        <label for="username">Some num1 :</label><br/>
+        <input type="text" value="" name="username" id="username" size="25" class="required" /><br/>
+        <label for="password">Some num2 :</label><br/>
+        <input type="text" value="" name="password" id="password" size="25" class="required" minlength='7'  /><br/>
+        
+        <label for="email">Some num :</label><br/>
+        <input type="text" value="" name="email" id="email" size="25" class='required email' /><br/>
+        <input type="submit" value="Submit"/>
+        
+    </fieldset>
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
